@@ -1,62 +1,98 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-body {
-}
 
 .container {
-    margin: 80px auto;
-    max-width: 640px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 660px;
+    height: 460px;
+    margin: auto;
+    background: linear-gradient(to right, #ec8ec2, #a13d8d);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-family: helvetica;
+}
+
+h3 {
+    font-family: arial;
+    text-align: center;
 }
 
 form {
-    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
-input, textarea, button {
-    display: block;
-    padding: 8px;
-    margin-bottom: 8px;
-    width: 100%;
-    resize: none;
+input {
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 18px;
+    width: 300px;
+    height: 26px;
+    align-items: center;
+    margin: 8px auto;
+    border-radius: 10px;
+}
+
+input {
+    text-align: center;
+    font-family: Helvetica;
+    -moz-appearance: textfield;
+    font-size: 18px;
+    width: 300px;
+    height: 26px;
+    align-items: center;
+    margin: 8px auto;
+    border-radius: 10px;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 button {
-    background-color: rgb(132, 132, 192);
-    border: none;
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: bold;
+    font-family: Helvetica;
     font-size: 18px;
-    cursor: pointer;
+    width: 305px;
+    margin: 10px auto;
+    height: 36px;
+    border-radius: 10px;
+    transition: 0.2s;
 }
 
 button:hover {
-    background-color:  rgba(132, 132, 192, 0.625);
+    background-color: #ec0cda;
+    color: #fff;
 }
 
-.success-message {
-    background-color: rgb(116, 180, 127);
+.tudoCerto {
+    text-align: center;
+    background-color: #226b40;
     padding: 16px;
     color: #fff;
+    margin: 10px auto;
+    width: 400px;
     display: none;
+    border: black solid 3px;
+    border-radius: 10px
 }
 
-.error-message {
-    font-size: 12px;
-    padding: 8px;
-    background-color: rgb(185, 95, 95);
+.numInvalido {
+    text-align: center;
+    background-color: #c22828;
+    padding: 16px;
     color: #fff;
-    margin-bottom: 8px;
+    margin: 10px auto;
+    width: 400px;
     display: none;
+    border: black solid 3px;
+    border-radius: 10px
 }
 
-input.error {
-    color: rgb(185, 95, 95);
-    border-color: rgb(185, 95, 95);
-    outline-color: rgb(185, 95, 95);
+p {
+    font-family: Helvetica;
+}

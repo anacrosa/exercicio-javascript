@@ -1,53 +1,30 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-deposito');
-    const campoA = document.getElementById('campo-A');
-    const campoB = document.getElementById('campo-B');
-    const errorMessage = document.querySelector('.error-message');
-    const successMessage = document.querySelector('.success-message');
+const form = document.querySelector('form');
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-        // Resetando as mensagens de erro e sucesso
-        errorMessage.style.display = 'none';
-        successMessage.style.display = 'none';
+    const numberOneInput = document.getElementById('number-one');
+    const numberTwoInput = document.getElementById('number-two');
 
-        // Validando se os campos estão preenchidos com números
-        if (campoA.value === '' || campoB.value === '') {
-            errorMessage.innerText = 'Preencha este campo.';
-            errorMessage.style.display = 'block';
-            return;
-        }
+    const numberOne = parseFloat(numberOneInput.value);
+    const numberTwo = parseFloat(numberTwoInput.value);
 
-        // Convertendo os valores dos campos para números inteiros
-        const numA = parseInt(campoA.value);
-        const numB = parseInt(campoB.value);
+    const tudoCerto = document.querySelector('.tudoCerto');
+    const numInvalido = document.querySelector('.numInvalido');
 
-        // Validando se os campos estão dentro das faixas especificadas
-        if (numA < 0 || numA > 8) {
-            errorMessage.style.display = 'block';
-            return;
-        }
+    if (numberOne < numberTwo) {
+        tudoCerto.innerHTML = `Número A: <b>${numberOne}</b> é menor que Número B: <b>${numberTwo}</b>!`;
+        tudoCerto.style.display = 'block';
+        numInvalido.style.display = 'none';
 
-        if (numB < 1 || numB > 9 || numB <= numA) {
-            errorMessage.innerText = 'O número do campo B deve ser maior que o número do campo A.';
-            errorMessage.style.display = 'block';
-            return;
-        }
+        numberOneInput.value = '';
+        numberTwoInput.value = '';
+    } else {
+        numInvalido.innerHTML = 'O número A deve ser menor que o Número B!';
+        tudoCerto.style.display = 'none';
+        numInvalido.style.display = 'block';
 
-        // Se todas as validações passarem, exibir mensagem de sucesso
-        successMessage.innerText = 'Parabéns! Está correto.';
-        successMessage.style.display = 'block';
-    });
-
-    // Adicionando eventos para limpar a mensagem de sucesso ao alterar os campos
-    campoA.addEventListener('input', function () {
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none'; // Ocultar mensagem de erro ao alterar o campo A
-    });
-
-    campoB.addEventListener('input', function () {
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none'; // Ocultar mensagem de erro ao alterar o campo B
-    });
+        numberOneInput.value = '';
+        numberTwoInput.value = '';
+    }
 });

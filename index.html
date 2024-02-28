@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML COM JS</title>
-    <link rel="stylesheet" href="./main.css" />
+    <title>Exercício aula HTML/JS</title>\
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="container">
-        <h1>EBAC Banking</h1>
-        <h2>Depósitos</h2>
+        <h1>Formulário EBAC</h1>
+        <h3>Preencha o formulário com dois números </h3>
+        <h3>O número A precisa ser maior que o Número B!</h3>
         <form>
-            <input type="text" id="nome-beneficiario"  required placeholder="Nome completo do beneficiário" />
-            <input type="number" id="numero-conta"  required placeholder="Numero da conta" />
-            <input type="number" id="valor-deposito"  required placeholder="Valor" />
-            <textarea placeholder="Descrição (opcional)" id="descrição" ></textarea>
-            <button id="btn-depositar"  type="submit">Depositar</button>
+            <input type="number" id="number-one" required placeholder="Número A">
+            <input type="number" id="number-two" required placeholder="Número B">
+            <button id="finish" type="submit">Enviar</button>
         </form>
+        <p class="tudoCerto"></p>\
+        <p class="numInvalido"></p>
+        <script src="./main.js"></script>
     </div>
 </body>
 </html>
